@@ -41,15 +41,6 @@ Build and document a small Windows enterprise environment to practice identity m
               +---------------------------+
 ```
 
-## Validation checklist
-- [ ] Install and boot Windows 11 Enterprise on `WIN11-CLIENT`.
-- [ ] Verify internal network connectivity; set client DNS to the DC01 internal IP.
-- [ ] Join the Windows 11 client to `lab.local`.
-- [ ] Sign in as a domain user and verify applied GPOs using `gpresult /r` or `gpresult /h`.
-- [ ] Confirm Control Panel restrictions work for an affected user.
-- [ ] Create a shared folder and test access based on group permissions.
-- [ ] Capture real screenshots and record troubleshooting steps.
-
 ## Project files
 - [Lab setup and validation notes](documentation/lab-notes.md)
 - [Screenshot checklist](screenshots/README.md)
