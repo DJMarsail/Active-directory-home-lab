@@ -1,16 +1,16 @@
-# Screenshot evidence
+# Lab evidence
 
-Add screenshots captured from the actual lab after each validation step.
+Screenshots captured from the Windows Server 2022 and Windows 11 Active Directory home lab.
 
-Suggested filenames:
-- `01-domain-controller.png` — DC01 AD DS and DNS roles
-- `02-users-and-groups.png` — sample users, groups and OU
-- `03-gpo-configuration.png` — Control Panel restriction settings
-- `04-client-domain-join.png` — successful Windows 11 domain membership
-- `05-gpresult.png` — evidence that the GPO applies to a domain user
-- `06-control-panel-blocked.png` — client-side policy enforcement
-- `07-share-permissions.png` — group-based file access validation
+## Network and domain
+- [Domain connectivity verified](domain-connectivity-verified.png)
+- [DNS resolution verified](dns-resolution-verified.png)
+- [Windows 11 joined to the domain](domain-joined-verified.png)
 
-Only the first three configuration areas are described as completed in the main README. The client-side tests are pending. Do not add placeholder images that could be mistaken for real test evidence.
+## Group Policy
+- [Group Policy applied to domain user](gpo-policy-applied.png)
+- [Control Panel restriction enforced](gpo-control-panel-blocked.png)
 
-Before uploading, review screenshots for passwords, credentials, personal identifiers and other sensitive information.
+## Access control
+- [Finance access allowed](finance-access-allowed.png)
+- [Finance access denied](finance-access-denied.png)
