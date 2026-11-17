@@ -1,18 +1,23 @@
-# PowerShell lab scripts
+# PowerShell validation utility
 
-These scripts support repeatable verification in the Windows Server / Windows 11 Active Directory home lab.
+The [`validate-client.ps1`](validate-client.ps1) script provides read-only checks for a Windows workstation joined to an Active Directory domain.
 
-## validate-client.ps1
+## Checks performed
 
-Run from an elevated PowerShell session on **WIN11-CLIENT** after the client is configured for the isolated `labnet` network.
+- Network adapter and DNS configuration
+- DNS resolution against the specified domain controller
+- TCP connectivity to DNS port 53
+- Windows domain membership
+- Applied Group Policy results for the current user
+
+## Usage
+
+Run in PowerShell on a Windows workstation with access to the domain controller:
 
 ```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\scripts\validate-client.ps1 -DomainName lab.local -DomainControllerIP 192.168.56.10
+.\validate-client.ps1 -DomainName lab.local -DomainControllerIP 192.168.10.10
 ```
 
-Replace `192.168.56.10` with the **actual DC01 internal-network IP**. The address above is an example, not a verified lab configuration. If running from inside the scripts folder, use `.\validate-client.ps1` instead.
+The script does not modify system settings, join computers to a domain, or change security policies.
 
-The script reports local DNS settings, DNS lookup, domain-controller reachability over DNS port 53, domain membership and Group Policy results. It is **read-only** and does not join the domain, change settings, or claim that policies are enforced.
-
-Run the script in the Windows client itself; GitHub stores code but cannot execute commands inside your local VirtualBox VMs.
+**Status:** Script included as supporting source code; execution results have not been documented. Independently captured evidence for domain connectivity, domain membership, and Group Policy enforcement is available in the [screenshots directory](../screenshots/README.md).
